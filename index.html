@@ -148,8 +148,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 	<section role="main" class="index_page">
 
 			<article class="tickets">
-				<h2>
-				Vandaag open van 13:00 tot 17:00				</h2>
+				<h2 id="opening-message"></h2>
 				<a href="https://iguana.nl/prijzen-openingstijden/" style="display: none;">Prijzen & Openingstijden</a>
 			</article>
 			<article class="about">
@@ -259,6 +258,68 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			<!-- /footer -->
 		</div>
 		<!-- /wrapper -->
+<script>
+function getOpeningHoursMessage() {
+  const now = new Date();
+
+  // Get Dutch date parts in Europe/Amsterdam timezone
+  const formatter = new Intl.DateTimeFormat("nl-NL", {
+    timeZone: "Europe/Amsterdam",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric"
+  });
+
+  const parts = formatter.formatToParts(now).reduce((acc, part) => {
+    if (part.type !== "literal") {
+      acc[part.type] = parseInt(part.value, 10);
+    }
+    return acc;
+  }, {});
+
+  const dutchDate = new Date(parts.year, parts.month - 1, parts.day);
+  const day = dutchDate.getDay(); // 0 = Sunday
+  const month = parts.month - 1;
+  const dayOfMonth = parts.day;
+
+  // Closed days
+  if (
+    (month === 11 && dayOfMonth === 25) || // 25 December
+    (month === 0 && dayOfMonth === 1)      // 1 January
+  ) {
+    return "Vandaag gesloten";
+  }
+
+  // Winter period: 1 October → 1 June
+  const isWinterPeriod = (month >= 9 || month <= 4);
+
+  let openTime, closeTime;
+
+  if (isWinterPeriod) {
+    openTime = "13:00";
+    closeTime = "17:00";
+  } else {
+    if (day >= 2 && day <= 6) {
+      // Tuesday - Saturday
+      openTime = "10:00";
+      closeTime = "17:00";
+    } else {
+      // Sunday - Monday
+      openTime = "13:00";
+      closeTime = "17:00";
+    }
+  }
+
+  return `Vandaag open van ${openTime} tot ${closeTime}`;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const el = document.getElementById("opening-message");
+  if (el) {
+    el.textContent = getOpeningHoursMessage();
+  }
+});
+</script>
 
 		<script type='text/javascript' src='/wp-content/plugins/paytium/public/js/parsley.min.js?ver=4.4.9' id='paytium-parsley-js'></script>
 <script type='text/javascript' src='https://iguana.nl/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
