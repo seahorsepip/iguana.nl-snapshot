@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>Kies uw eigen diavoorstelling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<script language="JavaScript">
+<!--
+<!-- Begin
+var max=0;
+function textlist() {
+max=textlist.arguments.length;
+for (i=0; i<max; i++)
+this[i]=textlist.arguments[i];
+}
+tl = new textlist( 
+"Dit is de news-ticker. Topper om je bezoekers info te geven. .....en dat kan veel.",
+"oneindig veel zinnen, en makkelijk aan te passen - werkelijk een topppertje :-)",
+"Je kunt de teksten en de grootte van de tekstbox eenvoudig aanpassen, geweldig toch...!",
+"Dus als je nogal veel te melden hebt, en je wilt je pagina niet helemaal volschrijven met tekst, gebruik dan dit script.",
+"Maak dan gebruik van dit geweldige script...... te vinden op www.leejoo.nl."
+);
+
+var x = 0; pos = 0;
+var l = tl[0].length;
+function textticker() {
+document.tickform.tickfield.value = tl[x].substring(0, pos) + "_";
+if(pos++ == l) {
+pos = 0; 
+setTimeout("textticker()", 4000); 
+if(++x == max) x = 0; 
+l = tl[x].length;
+} else
+setTimeout("textticker()", 100);
+}
+//  End -->
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#333333" text="#CCCCCC" link="#CCCCCC" vlink="#CCCCCC" alink="#CCCCCC" onLoad="textticker();MM_preloadImages('back1.gif')">
+<div id="Layer1" style="position:absolute; left:223px; top:275px; width:335px; height:41px; z-index:1; background-color: #666666; layer-background-color: #666666; border: 1px none #000000"> 
+  <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Klik op 
+    de gewenste diashow</font><br>
+    <a href="javascript:setslide(0)"><font face="Verdana, Arial, Helvetica, sans-serif">Slangen</font></a> 
+    <font face="Verdana, Arial, Helvetica, sans-serif">- <a href="javascript:setslide(1)">Hagedissen</a> 
+    - <a href="javascript:setslide(2)">Schildpadden</a></font>
+  <p align="center">
+</div>
+<div id="Layer2" style="position:absolute; left:223px; top:65px; width:335px; height:210px; z-index:2; background-color: #666666; layer-background-color: #666666; border: 1px none #000000"> 
+  <div align="center">
+    <script language="JavaScript1.2">
+
+/*Multi image slideshow script- by javascriptkit.com
+Visit JavaScript Kit (http://javascriptkit.com) for script
+Credit must stay intact for use*/
+
+//#1 SPECIFY number of slideshows
+var number_of_slideshows=3
+
+//#2 SPECIFY interval between slide (2000=2 seconds)
+var interval=4000
+
+//#3 SHOULD each slide be linked to a unique URL?
+var linked=0
+
+var slideshows=new Array(number_of_slideshows)
+for (i=0; i <number_of_slideshows; i++)
+slideshows[i]=new Array()
+
+//#4 SPECIFY image paths of 1st slideshow
+slideshows[0][0]='1s0.jpg'
+slideshows[0][1]='1s1.jpg'
+slideshows[0][2]='1s2.jpg'
+slideshows[0][3]='1s3.jpg'
+slideshows[0][4]='1s4.jpg'
+slideshows[0][5]='1s5.jpg'
+slideshows[0][6]='1s6.jpg'
+slideshows[0][7]='1s7.jpg'
+slideshows[0][8]='1s8.jpg'
+slideshows[0][9]='1s9.jpg'
+
+
+//SPECIFY image paths of 2nd slideshow (remove if number_of_slides less than 2)
+slideshows[1][0]='2h0.jpg'
+slideshows[1][1]='2h1.jpg'
+slideshows[1][2]='2h2.jpg'
+slideshows[1][3]='2h3.jpg'
+slideshows[1][4]='2h4.jpg'
+slideshows[1][5]='2h5.jpg'
+slideshows[1][6]='2h6.jpg'
+slideshows[1][7]='2h7.jpg'
+slideshows[1][8]='2h8.jpg'
+slideshows[1][9]='2h9.jpg'
+
+
+//SPECIFY image paths of 3rd slideshow (remove if number_of_slides less than 3)
+slideshows[2][0]='3sc0.jpg'
+slideshows[2][1]='3sc1.jpg'
+slideshows[2][2]='3sc2.jpg'
+slideshows[2][3]='3sc3.jpg'
+slideshows[2][4]='3sc4.jpg'
+slideshows[2][5]='3sc5.jpg'
+slideshows[2][6]='3sc6.jpg'
+slideshows[2][7]='3sc7.jpg'
+slideshows[2][8]='3sc8.jpg'
+slideshows[2][9]='3sc9.jpg'
+
+//EXTEND THIS ARRAY if more than 3 slide shows
+
+
+
+
+var maininc=0
+var subinc=0
+
+if (linked)
+document.write('<a href="javascript:clickredir()"><img src="'+slideshows[0][0]+'" name="multislide" border=0></a>')
+else
+document.write('<img src="'+slideshows[0][0]+'" name="multislide">')
+
+function slideit(){
+subinc= (subinc<slideshows[maininc].length-1)? subinc+1: 0
+document.images.multislide.src=slideshows[maininc][subinc]
+}
+
+function setslide(which){
+clearInterval(runit)
+maininc=which
+subinc=0
+runit=setInterval("slideit()",interval)
+}
+
+runit=setInterval("slideit()",interval)
+
+</script>
+  </div>
+</div>
+<div id="Layer3" style="position:absolute; left:223px; top:56px; width:335px; height:14px; z-index:3; background-color: #666666; layer-background-color: #666666; border: 1px none #000000"></div>
+<div id="Layer5" style="position:absolute; left:18px; top:21px; width:48px; height:50px; z-index:5"><a href="../diversen.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','back1.gif',1)"><img name="Image1" border="1" src="back.gif" width="40" height="40"></a></div>
+<div id="Layer4" style="position:absolute; left:223px; top:321px; width:335px; height:20px; z-index:6; background-color: #666666; layer-background-color: #666666; border: 1px none #000000"> 
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="foto1.htm">Diashow 
+    Ongewervelde dieren</a></font></div>
+</div>
+<div id="Layer6" style="position:absolute; left:598px; top:56px; width:40px; height:280px; z-index:7"> 
+  <p><img src="../m16_1.gif" width="40" height="40" border="1"></p>
+  <p><img src="../m16_2.gif" width="40" height="40" border="1"></p>
+  <p><img src="../m16_3.gif" width="40" height="40" border="1"></p>
+  <p><img src="../m16_4.gif" width="40" height="40" border="1"></p>
+  <p><img src="../m16_5.gif" width="40" height="40" border="1"></p>
+</div>
+<div align="center"> </div>
+<p>&nbsp; 
+<p>&nbsp; 
+</body>
+</html>

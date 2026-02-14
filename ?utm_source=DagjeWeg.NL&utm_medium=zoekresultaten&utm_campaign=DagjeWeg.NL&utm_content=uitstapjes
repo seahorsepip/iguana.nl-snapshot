@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Reptielenzoo Iguana - Een unieke attractie in Zeeland</title>
+<style type="text/css">
+body {
+	background-image: url(background.jpg);
+	background-position:center;
+	background-position:top;
+	background-repeat:no-repeat;
+}
+.Defaultfont {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.Defaultfont tr td p em {
+	color: #F00;
+}
+.Defaultfont tr td em {
+	color: #C10000;
+}
+.style1 {
+	color: #FF6600;
+	font-weight: bold;
+}
+.style2 {color: #336600}
+</style>
+<meta name="Description" content="In het centrum van Vlissingen vindt u attractie Reptielenzoo Iguana! Europees grootste, geheel overdekte reptielenzoo (een dierentuin van reptielen). " />
+<meta name="Keywords" content="Attracties, Dierentuin, Vlissingen, Reptielen, Schildpadden, Hagedissen, Slangen, Krokodillen " />
+</head>
+
+<body><div align="center"><font face="Verdana, Geneva, sans-serif"><span class="style1">Hoofdpagina</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="toegangsprijzen.html" class="style2">Toegangsprijzen en parkeerinfo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="gastenboek.php" class="style2">Gastenboek</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="links.php" class="style2">Links</a></font> 
+  <table  border="0" cellpadding="6" style="position:relative; top:161px; left:-110px; width:200px">
+  <tr>
+    <td><img src="hagedis.jpg" width="200" height="200" alt="Hagedis" /></td>
+    <td><img src="grijpstaartskink.jpg" width="200" height="200" alt="Grijsstaartskink" /></td>
+    <td><img src="lampropeltis.jpg" width="200" height="200" alt="Lampropeltis" /></td>
+  </tr>
+  <tr>
+    <td><img src="pijlgifkikker.jpg" width="200" height="200" alt="Pijlgifkikker" /></td>
+    <td><img src="groene leguaan.jpg" width="200" height="200" alt="Groene leguaan" /></td>
+    <td><img src="vlinder.jpg" width="200" height="200" alt="Vlinder" /></td>
+  </tr>
+  <tr>
+    <td><img src="waterschildpad.jpg" width="200" height="200" alt="Waterschilpad" /></td>
+    <td><img src="vogelspin.jpg" width="200" height="200" alt="Vogelspin" /></td>
+    <td><img src="reuzenschildpad.jpg" width="200" height="200" alt="Reuzeschilpad" /></td>
+  </tr>
+</table>
+<table width="875" border="0" cellpadding="4" class="Defaultfont" style="position:relative; top:155px; ">
+  <tr>
+    <td width="863" align="left"><strong><h1 style="font-size:18px">&nbsp;</h1>
+        <h1 style="font-size:18px">Reptielenzoo Iguana, &eacute;&eacute;n van de unieke attracties van Zeeland</h1>
+    </strong>
+      <p><strong>In het centrum van Vlissingen vindt u Reptielenzoo Iguana!  </strong> Europees grootste, geheel overdekte reptielenzoo (een dierentuin van reptielen). <br />
+        Rondom de subtropische serre zijn, verdeeld over vijf grote gebouwen, ruim vijfhonderd levende reptielen, amfibie&euml;n en insecten uit de gehele wereld te zien. De grootte van de dieren loopt een van vijf centimeter (de giftige Keizerschorpioen) tot zeven meter (Netpyton).<br />
+        Verder treft u aan o.a. kikkers, padden, salamanders, slangen, hagedissen, krokodilachtigen, schilpadden, wandelende takken en bladeren, vogelspinnen, schorpioenen enzovoorts.<br />
+        Er is een babykamer waar eieren worden uitgebroed en jonge dieren te zien zijn. U kunt oog in oog komen te staan met de giganten uit de reptielenwereld.<br />
+        <strong>Een attractie die u niet mag missen! </strong></p>
+      <p><em>In juli en augustus 's-morgens voordrachten met levende dieren<br />
+        die u van dichtbij kunt zien en zelfs kunt aanraken.
+        </em>
+        </p>
+      </p>
+      <h2 style="font-size:16px">Openingstijden:</h2>
+        
+      1 oktober - 31 mei  <br />
+      dagelijks van 13.00 - 17.30<br />
+      <br />
+      1 juni - 30 september<br />
+      zo en ma van 13.00 - 17.30<br />
+      di t/m za van 10.00 - 17.30<br />
+      Kassa sluit om 17.00
+      <p>We zijn  alleen op 25 dec. en 1 jan. gesloten.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p> <br />      
+          <br />
+      </p></td></tr>
+</table>-</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p center>&nbsp;</p>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33742360-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

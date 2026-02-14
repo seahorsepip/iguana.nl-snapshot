@@ -1,0 +1,286 @@
+<html>
+<head>
+<title>Kleurplaten</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<STYLE>
+.disableHscroll{
+width:100%;overflow-x:hidden;overflow-y:scroll;
+}
+
+v\:* {
+ BEHAVIOR: url(#default#VML)
+}
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#333333" text="#CCCCCC" link="#CCCCCC" vlink="#cccccc" alink="#CCCCCC" onLoad="MM_preloadImages('back1.gif')">
+<div id="Layer1" style="position:absolute; left:143px; top:117px; width:60px; height:25px; z-index:1"><a href="alligator.gif" onMouseOver="msover('#666666')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Alligator1</font></a> 
+</div>
+<div id="Layer2" style="position:absolute; left:93px; top:21px; width:660px; height:55px; z-index:2"> 
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#CCCCFF">Klik 
+    op de naam om de kleurplaat te bekijken. <br>
+    Wil je hem naar je eigen computer kopie&euml;ren, doe dit dan op de volgende 
+    manier:<br>
+    <i>Klik met de <b>rechtermuisknop</b> op de kleurplaat...Klik dan op <b>Afbeelding 
+    opslaan als...</b> <br>
+    Klik dan op <b>OK</b>... Open de afbeelding in een tekenprogramma en printen 
+    maar... </i></font></div>
+</div>
+<div id="Layer3" style="position:absolute; left:13px; top:406px; width:750px; height:22px; z-index:3"> 
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font size="3"><b><font color="#9999FF">Veel 
+    plezier met kleuren.</font></b></font><i> </i></font></div>
+</div>
+<p> 
+  <SCRIPT>
+
+// Spider Web Links- by Urs Dudli and Peter Gehrig (info@24fun.com) 
+// Website URL: http://www.24fun.com
+// Featured on Dynamic Drive -http://www.dynamicdrive.com
+
+// Minor modification by DD to disable horizontal scrollbar
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION STARTS HERE
+///////////////////////////////////////////////////////////////////////////
+
+// the default color of the 8 spiderlines
+var defaultcolor="#666666"
+
+// the width of the 8 spiderlines while highlighting textlinks (pixels)
+var lineweighthighlight=1
+
+// the width of the 8 spiderlines while NOT highlighting textlinks (pixels)
+var lineweightnormal=1
+
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION ENDS HERE
+///////////////////////////////////////////////////////////////////////////
+
+var distancetomouse=0
+
+var mousepos_x=0
+var mousepos_x=0
+
+var marginleft=0
+var margintop=0
+var marginbottom=0
+var marginright=0
+
+var margincenterx
+var margincentery
+
+var mousepos_x=0
+var mousepos_x=0
+
+if (document.all&&window.print){
+    document.write('<div id="bodycontent" style="position:relative">')
+}
+
+function initiateanimation(){
+
+    marginbottom=document.body.clientHeight
+    marginright=document.body.clientWidth
+    margincenterx=Math.floor(marginright/2)
+    margincentery=Math.floor(marginbottom/2)
+    
+    rectangulartopleft.to=marginleft+","+margintop
+    rectangulartopright.to=marginright+","+margintop
+    rectangularbottomleft.to=marginleft+","+marginbottom
+    rectangularbottomright.to=marginright+","+marginbottom
+    
+    rectangulartop.to=margincenterx+","+margintop
+    rectangularright.to=marginright+","+margincentery
+    rectangularbottom.to=margincenterx+","+marginbottom
+    rectangularleft.to=marginleft+","+margincentery
+    
+    rectangulartopleft.strokecolor=defaultcolor
+    rectangulartopright.strokecolor=defaultcolor
+    rectangularbottomleft.strokecolor=defaultcolor
+    rectangularbottomright.strokecolor=defaultcolor
+    
+    rectangulartop.strokecolor=defaultcolor
+    rectangularright.strokecolor=defaultcolor
+    rectangularbottom.strokecolor=defaultcolor
+    rectangularleft.strokecolor=defaultcolor
+}
+
+function msover(thiscolorhighlight){
+    if(document.all&&window.print){
+        rectangulartopleft.strokecolor=thiscolorhighlight
+        rectangulartopright.strokecolor=thiscolorhighlight
+        rectangularbottomleft.strokecolor=thiscolorhighlight
+        rectangularbottomright.strokecolor=thiscolorhighlight
+    
+        rectangulartop.strokecolor=thiscolorhighlight
+        rectangularright.strokecolor=thiscolorhighlight
+        rectangularbottom.strokecolor=thiscolorhighlight
+        rectangularleft.strokecolor=thiscolorhighlight
+        
+        rectangulartopleft.strokeweight=lineweighthighlight
+        rectangulartopright.strokeweight=lineweighthighlight
+        rectangularbottomleft.strokeweight=lineweighthighlight
+        rectangularbottomright.strokeweight=lineweighthighlight
+    
+        rectangulartop.strokeweight=lineweighthighlight
+        rectangularright.strokeweight=lineweighthighlight
+        rectangularbottom.strokeweight=lineweighthighlight
+        rectangularleft.strokeweight=lineweighthighlight
+    }
+}
+
+function msout(){
+    if(document.all&&window.print){
+        rectangulartopleft.strokecolor=defaultcolor
+        rectangulartopright.strokecolor=defaultcolor
+        rectangularbottomleft.strokecolor=defaultcolor
+        rectangularbottomright.strokecolor=defaultcolor
+    
+        rectangulartop.strokecolor=defaultcolor
+        rectangularright.strokecolor=defaultcolor
+        rectangularbottom.strokecolor=defaultcolor
+        rectangularleft.strokecolor=defaultcolor
+        
+        rectangulartopleft.strokeweight=lineweightnormal
+        rectangulartopright.strokeweight=lineweightnormal
+        rectangularbottomleft.strokeweight=lineweightnormal
+        rectangularbottomright.strokeweight=lineweightnormal
+    
+        rectangulartop.strokeweight=lineweightnormal
+        rectangularright.strokeweight=lineweightnormal
+        rectangularbottom.strokeweight=lineweightnormal
+        rectangularleft.strokeweight=lineweightnormal      
+    }
+}
+
+
+function momouse(){
+    if(document.all&&window.print){
+        mousepos_x=document.body.scrollLeft+event.clientX
+        mousepos_y=document.body.scrollTop+event.clientY
+    
+        rectangulartopleft.from=mousepos_x+","+mousepos_y
+        rectangulartopright.from=mousepos_x+","+mousepos_y
+        rectangularbottomleft.from=mousepos_x+","+mousepos_y
+        rectangularbottomright.from=mousepos_x+","+mousepos_y
+    
+        rectangulartop.from=mousepos_x+","+mousepos_y
+        rectangularright.from=mousepos_x+","+mousepos_y
+        rectangularbottom.from=mousepos_x+","+mousepos_y
+        rectangularleft.from=mousepos_x+","+mousepos_y
+     }
+}
+
+if(document.all&&window.print){
+    document.body.className="disableHscroll"
+    code="<v:line id=rectangulartopleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangulartopright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottomleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottomright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+
+    code+="<v:line id=rectangulartop style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottom style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+
+    document.body.insertAdjacentHTML("afterBegin",code)
+    document.onmousemove=momouse
+    window.onload=initiateanimation
+}
+</SCRIPT>
+</p>
+<div id="Layer2" style="position:absolute; left:23px; top:21px; width:54px; height:51px; z-index:2"><a href="../diversen.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','back1.gif',1)"><img name="Image1" border="1" src="back.gif" width="40" height="40"></a></div>
+<p>&nbsp;</p>
+<div id="Layer1" style="position:absolute; left:313px; top:143px; width:60px; height:25px; z-index:1"><a href="arbok.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Arbok</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:248px; top:112px; width:60px; height:25px; z-index:1"><a href="bij1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Bij</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:608px; top:281px; width:60px; height:25px; z-index:1"><a href="alligator1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Alligator2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:668px; top:127px; width:60px; height:25px; z-index:1"><a href="butterfree.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Butterfree1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:653px; top:193px; width:60px; height:25px; z-index:1"><a href="blastoise2.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Blastoise2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:468px; top:112px; width:60px; height:25px; z-index:1"><a href="blastoise.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Blastoise1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:233px; top:286px; width:60px; height:25px; z-index:1"><a href="butterfree2.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Butterfree2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:588px; top:118px; width:60px; height:25px; z-index:1"><a href="ekans.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Ekans</font></a></div>
+<div id="Layer1" style="position:absolute; left:43px; top:97px; width:60px; height:25px; z-index:1"><a href="caterpie.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Caterpie</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:513px; top:158px; width:60px; height:25px; z-index:1"><a href="diglett.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Diglett</font></a></div>
+<div id="Layer1" style="position:absolute; left:348px; top:102px; width:60px; height:25px; z-index:1"><a href="kaa.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kaa</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:38px; top:296px; width:60px; height:25px; z-index:1"><a href="kever1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kever</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:63px; top:171px; width:60px; height:25px; z-index:1"><a href="kikker%20grappig%205.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kikker1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:13px; top:261px; width:60px; height:25px; z-index:1"><a href="kikker1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kikker3</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:13px; top:141px; width:60px; height:25px; z-index:1"><a href="kikker.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kikker2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:643px; top:241px; width:60px; height:25px; z-index:1"><a href="komodovaraan.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Komodovaraan</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:323px; top:318px; width:60px; height:25px; z-index:1"><a href="krokodil.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Alligator4</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:463px; top:203px; width:60px; height:25px; z-index:1"><a href="kikker8.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Kikker4</font></a></div>
+<div id="Layer1" style="position:absolute; left:663px; top:321px; width:60px; height:25px; z-index:1"><a href="ratelslang%201a.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Ratelslang</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:128px; top:253px; width:60px; height:25px; z-index:1"><a href="pijlgifkikker1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Pijlgifkikker</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:413px; top:153px; width:60px; height:25px; z-index:1"><a href="pad.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Pad</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:118px; top:203px; width:60px; height:25px; z-index:1"><a href="lieveheersbeestje.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Lieveheersbeestje1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:178px; top:163px; width:60px; height:25px; z-index:1"><a href="landschildpad%202.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Landschildpad</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:338px; top:188px; width:60px; height:25px; z-index:1"><a href="krokodil1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Alligator3</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:428px; top:298px; width:60px; height:25px; z-index:1"><a href="lieveheersbeestje1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Lieveheersbeestje2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:498px; top:243px; width:60px; height:25px; z-index:1"><a href="squirtle.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Squirtle1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:28px; top:221px; width:60px; height:25px; z-index:1"><a href="slang.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Slang</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:363px; top:248px; width:60px; height:25px; z-index:1"><a href="schildpad1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Schildpad2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:253px; top:241px; width:60px; height:25px; z-index:1"><a href="schildpad.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Schildpad1</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:563px; top:203px; width:60px; height:25px; z-index:1"><a href="rups1a.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Rups</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:373px; top:351px; width:60px; height:25px; z-index:1"><a href="squirtle1.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Squirtle2</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:128px; top:303px; width:60px; height:25px; z-index:1"><a href="squirtle2.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Squirtle3</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:478px; top:336px; width:60px; height:25px; z-index:1"><a href="zeeschildpadden.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Zeeschildpadden</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:228px; top:328px; width:60px; height:25px; z-index:1"><a href="weedle.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Weedle</font></a> 
+</div>
+<div id="Layer1" style="position:absolute; left:28px; top:343px; width:60px; height:25px; z-index:1"><a href="waterschildpad%201.gif" onMouseOver="msover('#cccccc')" onMouseOut="msout()" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif">Waterschildpad</font></a> 
+</div>
+<p>&nbsp; </p>
+</body>
+</html>

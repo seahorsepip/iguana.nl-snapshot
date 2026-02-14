@@ -1,0 +1,358 @@
+<html>
+<head>
+<title>----- Iguana-Galgje -----</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<script language="JavaScript1.1">
+<!--
+
+/*
+JavaScript Image slideshow:
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free JavaScript here!
+*/
+
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
+
+//-->
+</script>
+<!-- TWO STEPS TO INSTALL HANGMAN:
+  1.  Copy the coding into the HEAD of your HTML document
+  2.  Put the last coding into the BODY of your HTML document  --><!-- STEP ONE: Paste this code into the HEAD of your HTML document  --> 
+<script language=javascript>
+<!--
+
+
+
+
+<!-- Original:  Mike McGrath (mike_mcgrath@lineone.net) -->
+<!-- Web Site:  http://website.lineone.net/~mike_mcgrath/index.htm  -->
+<!-- BEGIN --
+
+var alpha=new Array();
+var alpha_index=0;
+
+var bravo=new Array();
+var bravo_index=0;
+
+var running=0;
+var failnum=0;
+var advising=0;
+
+function pick()
+{
+  var choice="";
+  var blank=0;
+ 
+  for (i=0; i<words[index].length; i++)
+  {
+    t=0;
+    for(j=0; j<=alpha_index; j++) 
+    if(words[index].charAt(i)==alpha[j] || words[index].charAt(i)==alpha[j].toLowerCase()) t=1;
+    
+    if (t) choice+=words[index].charAt(i)+" ";
+    else 
+    {
+      choice+="_ ";
+      blank=1;
+    }
+  }   
+    
+  document.f.word.value=choice;
+    
+  if (!blank)
+  {
+    document.f.tried.value="   === Gewonnen ===";
+    document.f.score.value++;
+    running=0;
+  }
+} 
+
+
+function new_word(form)
+{
+  if(!running)
+  {
+    running=1;
+    failnum=0;
+    form.lives.value=failnum;
+    form.tried.value="";
+    form.word.value="";
+    index=Math.round(Math.random()*10000)%words.length;
+    alpha[0]=words[index].charAt(0);
+    alpha[1]=words[index].charAt(words[index].length-1);
+    alpha_index=1;
+    bravo[0]=words[index].charAt(0);
+    bravo[1]=words[index].charAt(words[index].length-1);
+    bravo_index=1;
+    pick();
+  }
+  else advise("Maak eerst dit woord af!");
+}
+
+function seek(letter)
+{
+  if (!running) advise(".....Klik op start!");
+  else
+  {
+    t=0;
+    for (i=0; i<=bravo_index; i++)
+    {
+      if (bravo[i]==letter || bravo[i]==letter.toLowerCase()) t=1;
+    }
+
+    if (!t) 
+	  {
+	    document.f.tried.value+=letter+" "
+	    bravo_index++;
+	    bravo[bravo_index]=letter;
+	    
+      for(i=0;i<words[index].length;i++)
+   	  if(words[index].charAt(i)==letter || words[index].charAt(i)==letter.toLowerCase()) t=1;
+  	  
+      if(t)
+      {
+  	    alpha_index++;
+	      alpha[alpha_index]=letter;
+	    }
+	    else failnum++;
+	
+      document.f.lives.value=failnum;
+	    if (failnum==6) 
+      {
+        document.f.tried.value="Verloren - Probeer het nog eens!";
+        document.f.word.value=words[index];
+        document.f.score.value--;
+        running=0;
+      }
+			else pick();
+	  }
+	  else advise("Letter "+letter+" is al gebruikt!");
+  }
+}
+
+function advise(msg)
+{
+  if (!advising)
+  {
+    advising=-1;
+    savetext=document.f.tried.value;  
+    document.f.tried.value=msg;
+    window.setTimeout("document.f.tried.value=savetext; advising=0;",1000);
+  }
+}
+
+var words = new Array("aardbeikikker","adderringslang","alligatorschildpad","alpenwatersalamander","ameiva","anaconda","apothekerskink","arrauschildpad","aspisadder","axolotl","baardagame","balearenhagedis","balkantoornslang","bamboeadder","batagur","beekschildpad","bergaardleguaan","bergduivel","bidsprinkhaan","bijtschildpad","blaasoppie","bladstaartgekko","blauwtongskink","bosmeester","bosratelslang","bosschildpad","breedsnuitkaaiman","breedvoorhoofdkrokodil","brilkaaiman","brilslang","brughagedis","brulkikker","bultkrokodil","capuchonslang","chuckwalla","cobra","coloradopad","daggekko","dikvingergekko","dobbelsteenslang","doodsadder","doornstaartagame","doosschildpad","driehoornkameleon","driekielwaterschildpad","drieteenslangskink","druppelschildpad","dwergekko","dwergpofadder","dwergratelslang","dwergsirene","eierslang","fidjileguaan","floridasierschildpad","fluitgekko","franjeteenleguaan","gaboenpofadder","galapagoslandleguaan","galapagosreuzenschildpad","gangesgaviaal","geelrandoosschildpad","gifkikker","gilamonster","gladranddrieklauw","gopherschildpad","grootkopmodderschildpad","haagleguaan","haakneusslang","haarkikker","hagedisslang","halsbandleguaan","hazelworm","heikikker","helmbasilisk","johannisskink","kaaimanteju","kameleon","kameleontongsalamander","kamsalamander","karetschildpad","kettingslang","klokschildpad","klompvoetkikker","knopstaartgekko","kolonistenagame","komodovaraan","koningscobra","koperkop","koraalslang","korenslang","korsthagedis","kousebandslang","kraaghagedis","krait","krekel","krokodilsalamander","kroonbasilisk","landkaartschildpad","langnekslangenhalsschildpad","lanspuntslang","lappenkameleon","lederschildpad","leguaan","luipaardgekko","luipaardkikker","madagascardaggekko","madagascarplatstaartgekko","madagascarscheenplaatschildpad","madagascarstralenschildpad","makikikker","mamba","mangrovennachtboomslang","matamata","melkslang","mississippialligator","moddersalamander","modderschildpad","moeraskrokodil","moerasschildpad","moloch","mudpuppy","muskusschildpad","muurgekko","muurhagedis","naaktvingergekko","netpython","neushoornleguaan","nijlkrokodil","nijlvaraan","olm","orinocokrokodil","paddekopagame","padhagedis","pannenkoekschildpad","panterkameleon","panterschildpad","pantsergordelstaarthagedis","parelskink","pauwoogdaggekko","pauwoogwaterschildpad","pijlgifkikker","pityusenhagedis","platstaartzeeslang","pofadder","prachthoornkikker","ratelslang","regenboogboa","reuzenbuidelkikker","reuzenmiljoenpoot","reuzenpad","reuzensalamander","reuzenschildhagedis","reuzenwaterslang","ribbensalamander","ridderanolis","rietkikker","ringslang","roerstaartzeeslang","roodbuikwaterslang","roodkeelanolis","roodkopdeukschildpad","roodoorkikker","roodstaartrotshagedis","roodwangsierschildpad","rugstreeppad","savanneschildpad","scheltopusik","schijftongkikker","schorpioen","seychellenkikker","seychellenreuzenschildpad","sidewinder","sieraardschildpad","slak","slanghazelworm","smalbekkikker","smaragdhagedis","smaragdskink","smaragdvaraan","snavelborstlandschildpad","soepschildpad","spinschildpad","spitskopschubpoothagedis","spitssnuitkrokodil","spleetschildpad","sporenschildpad","springkikker","sprinkhaan","staartkikker","stekelrandklepschildpad","steppenvaraan","sterschildpad","stierkikker","taipan","teju","terekayschildpad","tijgerkikker","tijgerpython","tjitjak","tokeh","tuatara","veelstreepmabuya","vierteenlandschildpad","vogelspin","vroedmeesterpad","vuurbuikpad","vuurbuiksalamander","waaierteengekko","warana","wateragame","weekschildpad","wenkbrauwkaaiman","wenkbrauwpad","wigkopkaaiman","wipneusadder","witsnorboomkikker","woestijngekko","wondergekko","wormhagedis","wormsalamander","zaagrugschildpad","zaagschubadder","zandadder","zandboa","zandgekko","zandhagedis","zeekrokodil","zeeleguaan","zesstreeprenhagedis","zwartbuikaardschildpad","zwarthalscobra","zwartkoppython","zwartkopschubpoothagedis");
+
+// -- END -->
+//-->
+</script>
+<meta content="MSHTML 5.50.4611.1300" name=GENERATOR>
+</head>
+
+<body bgcolor="#333333" text="#333333" link="#CCCCCC" vlink="#CCCCCC" alink="#CCCCCC" onLoad="">
+<div id="Layer1" style="position:absolute; left:58px; top:21px; width:401px; height:125px; z-index:1"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+  <!-- saved from url=(0049)http://website.lineone.net/~mike_mcgrath/hang.htm --> 
+  <!-- STEP TWO: Copy this code into the BODY of your HTML document  --> 
+  <center>
+    <form name=f>
+      <table cellspacing=0 cellpadding=2 bgcolor=plum border=0>
+        <tbody> 
+        <tr bgcolor="#CCCCCC"> 
+          <td align=right colspan=4><b>Score</b> : 
+            <input onFocus=score.blur(); size=2 
+      value=0 name=score>
+            <br>
+            <b>Fouten (6)</b>: 
+            <input onFocus=lives.blur(); size=2 
+      value=0 name=lives>
+          </td>
+          <td align=middle colspan=7> 
+            <input onFocus=word.blur(); size=25 
+      value="Iguana-Galgje" name=word>
+            <br>
+            <input onFocus=tried.blur(); 
+      size=25 value="Klik op GO" name=tried>
+          </td>
+          <td align=middle colspan=2> 
+            <input onClick=new_word(this.form); type=button value="GO" name="button">
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC"> 
+          <td> 
+            <input onClick="seek('A');" type=button value=" A " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('B');" type=button value=" B " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('C');" type=button value=" C " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('D');" type=button value=" D " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('E');" type=button value=" E " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('F');" type=button value=" F " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('G');" type=button value=" G " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('H');" type=button value=" H " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('I');" type=button value=" I   " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('J');" type=button value=" J  " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('K');" type=button value=" K " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('L');" type=button value=" L  " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('M');" type=button value=" M " name="button">
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC"> 
+          <td> 
+            <input onClick="seek('N');" type=button value=" N " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('O');" type=button value=" O " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('P');" type=button value=" P " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('Q');" type=button value=" Q " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('R');" type=button value=" R " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('S');" type=button value=" S " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('T');" type=button value=" T " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('U');" type=button value=" U " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('V');" type=button value=" V " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('W');" type=button value=" W " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('X');" type=button value=" X  " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('Y');" type=button value=" Y " name="button">
+          </td>
+          <td> 
+            <input onClick="seek('Z');" type=button value=" Z  " name="button">
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC"> 
+          <td colspan="13"> 
+            <div align="center"><font color="#333333">Auteur: <a href="http://website.lineone.net/%7Emike_mcgrath/index.htm" target="_blank"><font color="#000000">Mike 
+              McGrath</font></a> </font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC">
+          <td colspan="13">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#CCCCFF"> 
+          <td colspan="13"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+              <b>I g u a n a - G a l g j e</b></font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC"> 
+          <td colspan="13"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Ga 
+              op zoek naar...</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCFF"> 
+          <td colspan="13"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">...een 
+              <b>Reptiel</b>, een <b>Amfibie</b> of een <b>Ongewerveld Dier</b> 
+              </font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCCC"> 
+          <td colspan="13"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Maak 
+              je zes fouten, dan &quot;<b><i>HANG JE</i></b>&quot;</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#CCCCFF"> 
+          <td colspan="13"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Succes</font></div>
+          </td>
+        </tr>
+        </tbody> 
+      </table>
+    </form>
+  </center>
+</div>
+<div id="Layer2" style="position:absolute; left:153px; top:286px; width:210px; height:130px; z-index:2"><a href="http://www.herpetologielinks.nl.vg" target="_blank"><img src="food1.jpg" name="slide" border=2 width=202 height=139></a> 
+  <script language="">
+<!--
+
+//configure the paths of the images, plus corresponding target links
+slideshowimages("0h.jpg","1h.jpg","2h.jpg","3h.jpg","4h.jpg","5h.jpg","6h.jpg","7h.jpg","8h.jpg","9h.jpg")
+slideshowlinks("")
+
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=6000
+
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+whichimage++
+else
+whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+
+//-->
+</script>
+</div>
+<div id="Layer3" style="position:absolute; left:493px; top:21px; width:198px; height:246px; z-index:3"><img src="hangman.gif" width="200" height="255"></div>
+</body>
+</html>

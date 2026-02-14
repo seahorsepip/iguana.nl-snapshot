@@ -1,0 +1,267 @@
+<!-- This script has been in the http://www.javascripts.com Javascript Public Library! -->
+<!-- Note that though this material may have been in a public depository, certain author copyright restrictions may apply. -->
+
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// I DIDNT MAKE THIS SCRIPT, I JUST THOUGHT I WOULD SHARE IT WITH EVERYBODY
+<!--
+
+
+
+n = (document.layers) ? 1:0
+ie = (document.all) ? 1:0
+
+function init() {
+	slideoutActive = 0
+	if (n) {
+		slideout1 = document.slideoutInterface.document.slideoutContent.document.slideoutContent1
+		slideout2 = document.slideoutInterface.document.slideoutContent.document.slideoutContent2
+		slideout3 = document.slideoutInterface.document.slideoutContent.document.slideoutContent3
+		slideout4 = document.slideoutInterface.document.slideoutContent.document.slideoutContent4
+                slideout5 = document.slideoutInterface.document.slideoutContent.document.slideoutContent5
+	}
+
+	if (ie) {
+		slideout1 = slideoutContent1.style
+		slideout2 = slideoutContent2.style
+		slideout3 = slideoutContent3.style
+		slideout4 = slideoutContent4.style
+                slideout5 = slideoutContent5.style
+	}
+	slideoutShown = slideout1		
+	slideoutShown.xpos = 0
+	slideoutNew = "none"			
+	slideoutNew.xpos = -285
+}
+
+
+function slideout(which) {
+	if (!slideoutActive && slideoutShown != which) {
+		slideoutActive = 1  
+		slideoutNew = which
+		slideoutNew.xpos = -285
+		slideoutLeft()
+	}
+}
+
+
+function slideoutLeft() {
+	if (slideoutShown.xpos > -285) {
+		slideoutShown.xpos -= 15
+		slideoutShown.left = slideoutShown.xpos
+		setTimeout("slideoutLeft()",30)
+	}
+	else {
+		hide(slideoutShown)
+		show(slideoutNew)
+		setTimeout("slideoutRight()",50)
+	}
+}
+
+
+function slideoutRight() {
+	if (slideoutNew.xpos < 0) {
+		slideoutNew.xpos += 15
+		slideoutNew.left = slideoutNew.xpos
+		setTimeout("slideoutRight()",30)
+	}
+	else {
+		slideoutShown = slideoutNew
+		slideoutActive = 0  // stops the sequence
+	}
+}
+
+
+function show(showobj) {
+	if (n) showobj.visibility = "show"
+	if (ie) showobj.visibility = "visible"
+}
+function hide(hideobj) {
+	if (n) hideobj.visibility = "hide"
+	if (ie) hideobj.visibility = "hidden"
+}
+
+//-->
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</SCRIPT>
+<STYLE TYPE="text/css">
+<!--
+A {color:#000000; font-family:'Verdana'; font-weight:bold; font-size:7pt; text-decoration:none; line-height:20pt;}
+STRONG {font-family:'Verdana'; font-size:15pt; font-weight:bold; line-height:55pt;}
+P {font-family:'Verdana'; font-size:10pt; line-height:13pt;}
+TD {font-family:'Verdana'; font-size:10pt; line-height:13pt;}
+
+#slideoutInterface {position:absolute; left:50; top:50; width:400; height:250; clip:rect(0,400,250,0); background-color:#333333; layer-background-color:#333333; visibility:visible;}
+#slideoutSidebar1 {position:absolute; left:5; top:5; width:100; height:30; clip:rect(0,100,30,0); background-color:#9797FF; layer-background-color:#9797FF;}
+#slideoutSidebar2 {position:absolute; left:5; top:40; width:100; height:30; clip:rect(0,100,30,0); background-color:#FFFF00; layer-background-color:#FFFF00;}
+#slideoutSidebar3 {position:absolute; left:5; top:75; width:100; height:30; clip:rect(0,100,30,0); background-color:#FF80C0; layer-background-color:#FF80C0;}
+#slideoutSidebar4 {position:absolute; left:5; top:110; width:100; height:30; clip:rect(0,100,30,0); background-color:#00FF80; layer-background-color:#00FF80;}
+#slideoutSidebar5 {position:absolute; left:5; top:145; width:100; height:30; clip:rect(0,100,30,0); background-color:#FF5353; layer-background-color:#FF5353;}
+
+#slideoutContent {position:absolute; left:110; top:5; width:285; height:240; clip:rect(0,285,240,0); background-color:#333333; layer-background-color:#333333;}
+#slideoutContent1 {position:absolute; left:0; top:0; width:285; height:240; clip:rect(0,285,240,0); background-color:#DEDEDE; layer-background-color:#DEDEDE; visibility:visible;}
+#slideoutContent2 {position:absolute; left:-285; top:0; width:285; height:240; clip:rect(0,285,240,0); background-color:#DEDEDE; layer-background-color:#DEDEDE; visibility:hidden;}
+#slideoutContent3 {position:absolute; left:-285; top:0; width:285; height:240; clip:rect(0,285,240,0); background-color:#DEDEDE; layer-background-color:#DEDEDE; visibility:hidden;}
+#slideoutContent4 {position:absolute; left:-285; top:0; width:285; height:240; clip:rect(0,285,240,0); background-color:#DEDEDE; layer-background-color:#DEDEDE; visibility:hidden;}
+#slideoutContent5 {position:absolute; left:-285; top:0; width:285; height:240; clip:rect(0,285,240,0); background-color:#DEDEDE; layer-background-color:#DEDEDE; visibility:hidden;}
+
+//-->
+</STYLE>
+</HEAD>
+
+<BODY BGCOLOR="#333333" TEXT="#CCCCCC" onLoad="init();MM_preloadImages('back1.gif')" link="#CCCCCC" vlink="#CCCCCC" alink="#CCCCCC">
+<DIV ID="slideoutInterface" style="clip: rect(0 400 250 0); background-color: #333333; layer-background-color: #333333; border: 1px none #333333; left: 200; top: 50"> 
+  <DIV ID="slideoutSidebar1" style="background-color: #666666"> 
+    <P ALIGN=CENTER><A HREF="javascript:slideout(slideout1)">Terug</A></P>
+  </DIV>
+  <DIV ID="slideoutSidebar2" style="background-color: #666666">
+    <P ALIGN=CENTER><A HREF="javascript:slideout(slideout2)">4 jaar en ouder</A></P>
+  </DIV>
+  <DIV ID="slideoutSidebar3" style="background-color: #666666">
+    <P ALIGN=CENTER><A HREF="javascript:slideout(slideout3)">0 t.e.m. 3 jaar</A></P>
+  </DIV>
+  <DIV ID="slideoutSidebar4" style="background-color: #666666">
+    <P ALIGN=CENTER><A HREF="javascript:slideout(slideout4)">Groepen</A></P>
+  </DIV>
+  <DIV ID="slideoutSidebar5" style="background-color: #666666">
+    <P ALIGN=CENTER><A HREF="javascript:slideout(slideout5)">Vrienden</A></P>
+  </DIV>
+
+<DIV ID="slideoutContent">
+
+    <DIV ID="slideoutContent1" style="background-color: #333333; clip: rect(0 285 240 0)"> 
+      <P ALIGN="CENTER"><a href="menu.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','back1.gif',1)"><img name="Image1" border="1" src="back.gif" width="40" height="40"></a> 
+        <br>
+        <STRONG><font color="#CCCCCC" face="Verdana, Arial, Helvetica, sans-serif" size="3">Een 
+        bezoek aan Iguana <br>
+        is niet duur</font></STRONG> 
+      <P>
+      <br>
+      <p></P>
+</DIV>
+
+<DIV ID="slideoutContent2"style="background-color: #333333; clip: rect(0 285 240 0)"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="138" width="65%"><font size="3"> <font face="Verdana, Arial, Helvetica, sans-serif">4 
+            jaar en ouder.........</font></font></td>
+          <td height="138" width="35%"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">&euro; 
+            6,00 </font></td>
+        </tr>
+      </table>
+      <P ALIGN="CENTER">&nbsp;
+      <p></P>
+</DIV>
+
+
+    <DIV ID="slideoutContent3"style="background-color: #333333; clip: rect(0 285 240 0)"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="138" width="65%"><font size="3"> <font face="Verdana, Arial, Helvetica, sans-serif">0 
+            t.e.m. 3 jaar.........</font></font></td>
+          <td height="138" width="35%"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Gratis</font></td>
+        </tr>
+      </table>
+      <P ALIGN="CENTER">&nbsp;
+      <p></P>
+</DIV>
+
+<DIV ID="slideoutContent4"style="background-color: #333333; clip: rect(0 285 240 0)">
+      <P ALIGN="left">&nbsp;       
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" height="142">
+        <tr> 
+          <td valign="middle" width="72%" height="72"> 
+            <p><font size="3">10 - 25 </font><font size="3">Personen..........</font></p>
+            </td>
+          <td width="28%" valign="middle" height="72"><font size="3">&euro; 5,00</font></td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="72%"> 
+            <p><font size="3">25 Personen </font><font size="3">of meer.....</font></p>
+            </td>
+          <td width="28%" valign="middle"><font size="3">&euro; 4,50</font></td>
+        </tr>
+      </table>
+      <p></P>
+</DIV>
+
+
+<DIV ID="slideoutContent5"style="background-color: #333333; clip: rect(0 285 240 0)">
+      <P ALIGN="left">&nbsp;
+      <table width="100%" cellspacing="0" cellpadding="0" height="140" border="1" bordercolor="#666666">
+        <tr> 
+          <td valign="middle" width="43%" height="101"> 
+            <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Donateurs 
+              <br>
+              heten <br>
+              bij ons <br>
+              <b>Vrienden van Iguana</b><i> <br>
+              </i></font></p>
+          </td>
+          <td width="57%" valign="middle" height="101"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Elk 
+              bedrag is welkom, maar wanneer u &euro; 14,00 of meer doneert krijgt 
+              u 2 vrijkaartjes en minimaal <br>
+              2 x per jaar <i>donateursberichten</i> <br>
+              </font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="middle" width="43%" height="42"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Jaarkaart 
+              </b></font></div>
+          </td>
+          <td width="57%" valign="middle" height="42"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">&euro; 
+              19,00 per persoon<br>
+              (Pasfoto verplicht)</font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+              </font></div>
+          </td>
+        </tr>
+      </table>
+      <p></P>
+</DIV>
+
+
+</DIV>
+
+</div>
+<div id="Layer1" style="position:absolute; left:8px; top:300px; width:760px; height:80px; z-index:1"> 
+  <div align="center"><img src="../fotomap/pantser1.jpg" width="215" height="86"> 
+    <img src="../fotomap/pantser1.jpg" width="215" height="86"> <img src="../fotomap/pantser1.jpg" width="215" height="86"></div>
+</div>
+<div id="Layer2" style="position:absolute; left:68px; top:396px; width:640px; height:30px; z-index:2; background-color: #333333; layer-background-color: #333333; border: 1px none #000000"> 
+  <div align="center">
+    <p><font face="Courier New, Courier, mono" size="2">Voor het tarief voor scholen 
+      kunt u het beste telefonisch contact opnemen, liefst tijdens de uren dat 
+      we geopend zijn.</font></p>
+  </div>
+</div>
+</BODY>
+</HTML>
+<!-- Simba says Roar. -->
+

@@ -1,0 +1,47 @@
+.quizQuestion
+{
+	font-family		: "Comic Sans MS";
+	font-size			: 14px;
+	font-weight		: bold;
+	color				: #FFFFCC;
+; background-attachment: fixed; background-color: #006699; background-repeat: repeat; background-position: center center
+; height: auto; width: 600px
+; float: none; clear: none
+; border: #99CC33; border-style: groove; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin
+}
+.quizRightWrong
+{
+	font-family		: Garamond;
+	font-size			: large;
+	font-weight		: bold;
+	color				: #FFFF00;
+; text-decoration: underline
+; background-color: #CC0033; background-position: center center; text-align: center; height: auto; width: 250px; margin-top: auto; margin-right: auto; margin-bottom: auto; margin-left: auto
+; background-repeat: repeat; border: thin #FFFF00 solid; list-style-position: inside; list-style-type: circle; position: relative; visibility: visible; z-index: auto; clip:   rect(   )
+; cursor: text; page-break-before: auto; page-break-after: auto
+; clear: none; float: none
+}
+.quizText
+{
+	font-family		: "Comic Sans MS";
+	font-size			: 14px;
+	color				: #FFFFCC;
+; font-weight: bold
+; border: thin #009999 solid; list-style-position: outside; list-style-type: none; clip:    rect(   ); cursor: auto; background-color: #009966; background-position: 400px center; height: 20px; width: 400px; position: static; left: auto; top: auto?, OffX=?, OffY=?, Positive=?)?, FinishOpacity=?, Style=?, StartX=?, StartY=?, FinishX=?, FinishY=?); page-break-before: auto; page-break-after: auto; background-color: #006F00; background-repeat: repeat; background-position: center center
+}
+.quizAnswers
+{
+	font-family		: Garamond;
+	font-size			: 14pt;
+	font-weight		: bold;
+	color				: #FFFFCC;
+; height: auto; width: 400px; background-color: #99CC66; border: thin #99CC99 double
+}
+.quizIndent
+{
+	font-family		: "Comic Sans MS";
+	font-size			: 14px;
+	color				: #FFFFFF; 
+; font-weight: bold
+; background-color: #333333; background-repeat: no-repeat; background-position: center center; height: auto; width: 400px; list-style-position: outside; list-style-type: disc; cursor: auto; margin-top: auto; margin-right: auto; margin-bottom: auto; margin-left: auto; border: #99CC99; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin?)?, Direction=?, Strength=?); page-break-before: auto; page-break-after: auto
+}
